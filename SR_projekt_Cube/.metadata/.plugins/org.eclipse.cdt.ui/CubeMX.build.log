@@ -1,0 +1,41 @@
+21:13:06 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  144 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  124 |   int8_t test;
+      |          ^~~~
+../Core/Src/main.c: In function '_write':
+../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
+      |                             ^~~
+      |                             |
+      |                             char *
+In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
+                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
+                 from ../Core/Inc/main.h:30,
+                 from ../Core/Src/main.c:20:
+../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
+ 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
+      |                                                                ~~~~~~~~~~~~~~~^~~~~
+At top level:
+../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
+  365 | static void MX_LCD_Init(void)
+      |             ^~~~~~~~~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  42844	    484	   2108	  45436	   b17c	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+
+21:13:07 Build Finished. 0 errors, 4 warnings. (took 1s.56ms)
+

@@ -1,0 +1,70 @@
+/**\
+ * Copyright (c) 2021 Bosch Sensortec GmbH. All rights reserved.
+ *
+ * SPDX-License-Identifier: BSD-3-Clause
+ **/
+
+/******************************************************************************/
+#include <stdint.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+#include "bmp2_defs.h"
+
+
+
+/*!
+ *  @brief Prints the execution status of the APIs.
+ */
+void bmp2_error_codes_print_result(const char api_name[], int8_t rslt)
+{
+    if (rslt != BMP2_OK)
+    {
+        printf("%s\t", api_name);
+
+        switch (rslt)
+        {
+            case BMP2_E_NULL_PTR:
+                printf("Error [%d] : Null pointer error.", rslt);
+                printf(
+                    "It occurs when the user tries to assign value (not address) to a pointer, which has been initialized to NULL.\r\n");
+                break;
+            case BMP2_E_COM_FAIL:
+                printf("Error [%d] : Communication failure error.", rslt);
+                printf(
+                    "It occurs due to read/write operation failure and also due to power failure during communication\r\n");
+                break;
+            case BMP2_E_INVALID_LEN:
+                printf("Error [%d] : Invalid length error.", rslt);
+                printf("Occurs when length of data to be written is zero\n");
+                break;
+            case BMP2_E_DEV_NOT_FOUND:
+                printf("Error [%d] : Device not found error. It occurs when the device chip id is incorrectly read\r\n",
+                       rslt);
+                break;
+            case BMP2_E_UNCOMP_TEMP_RANGE:
+                printf("Error [%d] : Uncompensated temperature data not in valid range error.", rslt);
+                break;
+            case BMP2_E_UNCOMP_PRESS_RANGE:
+                printf("Error [%d] : Uncompensated pressure data not in valid range error.", rslt);
+                break;
+            case BMP2_E_UNCOMP_TEMP_AND_PRESS_RANGE:
+                printf(
+                    "Error [%d] : Uncompensated pressure data and uncompensated temperature data are not in valid range error.",
+                    rslt);
+                break;
+            default:
+                printf("Error [%d] : Unknown error code\r\n", rslt);
+                break;
+        }
+    }
+}
+
+
+/*!
+ *  @brief Function deinitializes coines platform.
+ */
+/*void bmp2_coines_deinit(void)
+{
+    coines_close_comm_intf(COINES_COMM_INTF_USB);
+}*/
