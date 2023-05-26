@@ -1,1867 +1,535 @@
-17:33:54 **** Incremental Build of configuration Debug for project CubeMX ****
+18:56:36 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:122:10: warning: unused variable 'rslt' [-Wunused-variable]
-  122 |   int8_t rslt;
-      |          ^~~~
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:588:28: warning: format '%d' expects argument of type 'int', but argument 2 has type 'double' [-Wformat=]
-  588 |      printf("Temperatura: %d C Cisnienie: %d Pa \r\n", temp, pres);
-      |                           ~^                           ~~~~
-      |                            |                           |
-      |                            int                         double
-      |                           %f
-../Core/Src/main.c:588:44: warning: format '%d' expects argument of type 'int', but argument 3 has type 'double' [-Wformat=]
-  588 |      printf("Temperatura: %d C Cisnienie: %d Pa \r\n", temp, pres);
-      |                                           ~^                 ~~~~
-      |                                            |                 |
-      |                                            int               double
-      |                                           %f
-../Core/Src/main.c:572:31: warning: unused variable 'temp32' [-Wunused-variable]
-  572 |      uint32_t pres32, pres64, temp32;
-      |                               ^~~~~~
-../Core/Src/main.c:572:23: warning: unused variable 'pres64' [-Wunused-variable]
-  572 |      uint32_t pres32, pres64, temp32;
-      |                       ^~~~~~
-../Core/Src/main.c:572:15: warning: unused variable 'pres32' [-Wunused-variable]
-  572 |      uint32_t pres32, pres64, temp32;
-      |               ^~~~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:676:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  676 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:368:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  368 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  31536	    120	   2088	  33744	   83d0	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:34:22 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  31536	    120	   2088	  33744	   83d0	CubeMX.elf
-Finished building: default.size.stdout
- 
-17:35:29 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:122:10: warning: unused variable 'rslt' [-Wunused-variable]
-  122 |   int8_t rslt;
-      |          ^~~~
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:572:31: warning: unused variable 'temp32' [-Wunused-variable]
-  572 |      uint32_t pres32, pres64, temp32;
-      |                               ^~~~~~
-../Core/Src/main.c:572:23: warning: unused variable 'pres64' [-Wunused-variable]
-  572 |      uint32_t pres32, pres64, temp32;
-      |                       ^~~~~~
-../Core/Src/main.c:572:15: warning: unused variable 'pres32' [-Wunused-variable]
-  572 |      uint32_t pres32, pres64, temp32;
-      |               ^~~~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:676:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  676 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:368:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  368 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  31536	    120	   2088	  33744	   83d0	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:35:34 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  31536	    120	   2088	  33744	   83d0	CubeMX.elf
-Finished building: default.size.stdout
- 
-17:36:34 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:42:21 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-17:49:06 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:122:10: warning: unused variable 'rslt' [-Wunused-variable]
-  122 |   int8_t rslt;
-      |          ^~~~
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:543:31: warning: unused variable 'temp32' [-Wunused-variable]
-  543 |      uint32_t pres32, pres64, temp32;
-      |                               ^~~~~~
-../Core/Src/main.c:543:23: warning: unused variable 'pres64' [-Wunused-variable]
-  543 |      uint32_t pres32, pres64, temp32;
-      |                       ^~~~~~
-../Core/Src/main.c:543:15: warning: unused variable 'pres32' [-Wunused-variable]
-  543 |      uint32_t pres32, pres64, temp32;
-      |               ^~~~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:647:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  647 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:339:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  339 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:50:45 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/bmp280.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/bmp280.d" -MT"Core/Src/bmp280.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/bmp280.o"
-arm-none-eabi-gcc "../Core/Src/driver_aht20.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driver_aht20.d" -MT"Core/Src/driver_aht20.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driver_aht20.o"
-arm-none-eabi-gcc "../Core/Src/driver_aht20_read_test.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/driver_aht20_read_test.d" -MT"Core/Src/driver_aht20_read_test.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/driver_aht20_read_test.o"
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-arm-none-eabi-gcc "../Core/Src/stm32l476g_discovery.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l476g_discovery.d" -MT"Core/Src/stm32l476g_discovery.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l476g_discovery.o"
-arm-none-eabi-gcc "../Core/Src/stm32l476g_discovery_glass_lcd.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l476g_discovery_glass_lcd.d" -MT"Core/Src/stm32l476g_discovery_glass_lcd.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l476g_discovery_glass_lcd.o"
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_hal_msp.d" -MT"Core/Src/stm32l4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_hal_msp.o"
-arm-none-eabi-gcc "../Core/Src/stm32l4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/stm32l4xx_it.d" -MT"Core/Src/stm32l4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32l4xx_it.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:120:10: warning: unused variable 'rslt' [-Wunused-variable]
-  120 |   int8_t rslt;
-      |          ^~~~
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:541:31: warning: unused variable 'temp32' [-Wunused-variable]
-  541 |      uint32_t pres32, pres64, temp32;
-      |                               ^~~~~~
-../Core/Src/main.c:541:23: warning: unused variable 'pres64' [-Wunused-variable]
-  541 |      uint32_t pres32, pres64, temp32;
-      |                       ^~~~~~
-../Core/Src/main.c:541:15: warning: unused variable 'pres32' [-Wunused-variable]
-  541 |      uint32_t pres32, pres64, temp32;
-      |               ^~~~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:645:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  645 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:337:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  337 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc "../Core/Src/syscalls.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/syscalls.d" -MT"Core/Src/syscalls.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/syscalls.o"
-arm-none-eabi-gcc "../Core/Src/sysmem.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/sysmem.d" -MT"Core/Src/sysmem.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sysmem.o"
-arm-none-eabi-gcc "../Core/Src/system_stm32l4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/system_stm32l4xx.d" -MT"Core/Src/system_stm32l4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32l4xx.o"
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:51:04 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:540:31: warning: unused variable 'temp32' [-Wunused-variable]
-  540 |      uint32_t pres32, pres64, temp32;
-      |                               ^~~~~~
-../Core/Src/main.c:540:23: warning: unused variable 'pres64' [-Wunused-variable]
-  540 |      uint32_t pres32, pres64, temp32;
-      |                       ^~~~~~
-../Core/Src/main.c:540:15: warning: unused variable 'pres32' [-Wunused-variable]
-  540 |      uint32_t pres32, pres64, temp32;
-      |               ^~~~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:644:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  644 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:336:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  336 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:51:31 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:644:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  644 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:336:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  336 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-17:53:05 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:645:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  645 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:337:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  337 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39476	    484	   2084	  42044	   a43c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:00:58 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:136:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  136 |    itoa(test, temp);
-      |    ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:652:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  652 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:344:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  344 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39764	    484	   2092	  42340	   a564	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:01:52 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:136:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  136 |    itoa(test, temp,10);
-      |    ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:653:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  653 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42588	    484	   2108	  45180	   b07c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:02:50 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42588	    484	   2108	  45180	   b07c	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:03:55 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:136:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  136 |    itoa(pres, temp,10);
-      |    ^~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:653:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  653 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42596	    484	   2108	  45188	   b084	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:04:12 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42596	    484	   2108	  45188	   b084	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:06:08 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:136:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  136 |    itoa(pres, temp,10);
-      |    ^~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:653:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  653 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42604	    484	   2108	  45196	   b08c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:06:12 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42604	    484	   2108	  45196	   b08c	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:07:40 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:136:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  136 |    itoa(pres, temp,10);
-      |    ^~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:653:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  653 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42604	    484	   2108	  45196	   b08c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:10:42 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:566:6: error: cannot convert to a pointer type
-  566 |      BSP_LCD_GLASS_DisplayString((uint8_t*)pres);
-      |      ^~~~~~~~~~~~~~~~~~~~~~~~~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:654:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  654 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-18:13:08 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:569:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  569 |      itoa(p,buf,10);
-      |      ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:658:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  658 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42564	    484	   2108	  45156	   b064	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:13:11 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42564	    484	   2108	  45156	   b064	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:14:02 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:569:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  569 |      itoa(p,buf,10);
-      |      ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:658:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  658 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42580	    484	   2108	  45172	   b074	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:14:05 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42580	    484	   2108	  45172	   b074	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:14:54 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:569:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  569 |      itoa(p,buf,10);
-      |      ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:658:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  658 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42580	    484	   2108	  45172	   b074	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:14:57 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42580	    484	   2108	  45172	   b074	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:16:09 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:569:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  569 |      itoa(p,buf,10);
-      |      ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:658:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  658 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:345:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  345 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42580	    484	   2108	  45172	   b074	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:16:52 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'BMP280_read':
-../Core/Src/main.c:570:6: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  570 |      itoa(p,buf,10);
-      |      ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:659:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  659 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:346:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  346 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42580	    484	   2108	  45172	   b074	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:27:07 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:137:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  137 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:656:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  656 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:347:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  347 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42628	    484	   2108	  45220	   b0a4	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:27:21 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42628	    484	   2108	  45220	   b0a4	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:56:13 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:138:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  138 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:659:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  659 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:350:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  350 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42708	    484	   2108	  45300	   b0f4	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:57:01 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42708	    484	   2108	  45300	   b0f4	CubeMX.elf
-Finished building: default.size.stdout
- 
-18:58:03 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:659:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  659 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:350:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  350 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  39492	    484	   2092	  42068	   a454	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-18:59:17 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:138:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  138 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:140:4: error: too few arguments to function 'strcat'
-  140 |    strcat()(buf,hpa);
-      |    ^~~~~~
-In file included from ../Core/Inc/driver_aht20.h:42,
-                 from ../Core/Src/main.c:27:
-c:\st\stm32cubeide_1.8.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\include\string.h:34:8: note: declared here
-   34 | char  *strcat (char *__restrict, const char *__restrict);
-      |        ^~~~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:659:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  659 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:350:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  350 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:49: Core/Src/main.o] Error 1
-"make -j8 all" terminated with exit code 2. Build might be incomplete.
-18:59:28 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:138:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  138 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:131:11: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  131 |    int8_t test;
-      |           ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:659:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  659 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:350:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  350 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42724	    484	   2108	  45316	   b104	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:00:59 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:139:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  139 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:660:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  660 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:351:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  351 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42724	    484	   2108	  45316	   b104	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:02:00 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:02:45 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:03:54 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:04:23 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:138:8: warning: unused variable 't' [-Wunused-variable]
-  138 |    int t = (int)temp;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:04:46 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:138:8: warning: unused variable 't' [-Wunused-variable]
-  138 |    int t = (int)temp;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:05:21 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:138:8: warning: unused variable 't' [-Wunused-variable]
-  138 |    int t = (int)temp;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42756	    484	   2108	  45348	   b124	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:05:50 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:139:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  139 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:660:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  660 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:351:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  351 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:06:18 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:139:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  139 |    itoa(p,buf,10);
-      |    ^~~~
-../Core/Src/main.c:140:9: warning: unused variable 'hpa' [-Wunused-variable]
-  140 |    char hpa[3] = "hPa";
-      |         ^~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:660:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  660 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:351:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  351 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42692	    484	   2108	  45284	   b0e4	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:07:08 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:141:9: warning: unused variable 'hpa' [-Wunused-variable]
-  141 |    char hpa[3] = "hPa";
-      |         ^~~
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42708	    484	   2108	  45300	   b0f4	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:08:55 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:141:19: warning: initialization of 'char' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
-  141 |    char celsius = "C";
-      |                   ^~~
-../Core/Src/main.c:142:15: warning: passing argument 2 of 'strcat' makes pointer from integer without a cast [-Wint-conversion]
-  142 |    strcat(buf,celsius);
-      |               ^~~~~~~
-      |               |
-      |               char
-In file included from ../Core/Inc/driver_aht20.h:42,
-                 from ../Core/Src/main.c:27:
-c:\st\stm32cubeide_1.8.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.10.3-2021.10.win32_1.0.200.202301161003\tools\arm-none-eabi\include\string.h:34:34: note: expected 'const char * restrict' but argument is of type 'char'
-   34 | char  *strcat (char *__restrict, const char *__restrict);
-      |                                  ^
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:09:36 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:11:39 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:140:4: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  140 |    itoa(t,buf,10);
-      |    ^~~~
-../Core/Src/main.c:137:8: warning: unused variable 'p' [-Wunused-variable]
-  137 |    int p = ((int)pres)/100;
-      |        ^
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:661:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  661 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:352:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  352 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42740	    484	   2108	  45332	   b114	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:17:07 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  144 |     itoa(t,buf,10);
-      |     ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-19:18:31 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  144 |     itoa(t,buf,10);
-      |     ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-21:07:01 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-21:07:23 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-21:08:03 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:129:7: warning: unused variable 'i' [-Wunused-variable]
-  129 |   int i = 1;
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:137:7: warning: unused variable 'i' [-Wunused-variable]
+  137 |   int i = 1;
       |       ^
-../Core/Src/main.c:128:8: warning: unused variable 'hpa' [-Wunused-variable]
-  128 |   char hpa[3] = "hPa";
+../Core/Src/main.c:136:8: warning: unused variable 'hpa' [-Wunused-variable]
+  136 |   char hpa[3] = "hPa";
       |        ^~~
-../Core/Src/main.c:127:8: warning: unused variable 'celsius' [-Wunused-variable]
-  127 |   char celsius[2] = " C";
+../Core/Src/main.c:135:8: warning: unused variable 'celsius' [-Wunused-variable]
+  135 |   char celsius[2] = " C";
       |        ^~~~~~~
-../Core/Src/main.c:126:8: warning: unused variable 'buf' [-Wunused-variable]
-  126 |   char buf[7] ="";
+../Core/Src/main.c:134:8: warning: unused variable 'buf' [-Wunused-variable]
+  134 |   char buf[7] ="";
       |        ^~~
-../Core/Src/main.c:125:16: warning: unused variable 'temp' [-Wunused-variable]
-  125 |   double pres, temp;
+../Core/Src/main.c:133:16: warning: unused variable 'temp' [-Wunused-variable]
+  133 |   double pres, temp;
       |                ^~~~
-../Core/Src/main.c:125:10: warning: unused variable 'pres' [-Wunused-variable]
-  125 |   double pres, temp;
+../Core/Src/main.c:133:10: warning: unused variable 'pres' [-Wunused-variable]
+  133 |   double pres, temp;
       |          ^~~~
-../Core/Src/main.c:124:10: warning: unused variable 'test' [-Wunused-variable]
-  124 |   int8_t test;
+../Core/Src/main.c:132:10: warning: unused variable 'test' [-Wunused-variable]
+  132 |   int8_t test;
       |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
 arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CubeMX.elf
  
 arm-none-eabi-size   CubeMX.elf 
 arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
    text	   data	    bss	    dec	    hex	filename
-  39548	    484	   2092	  42124	   a48c	CubeMX.elf
+  41792	    484	   2172	  44448	   ada0	CubeMX.elf
 Finished building: default.size.stdout
  
 Finished building: CubeMX.list
  
-21:09:08 **** Incremental Build of configuration Debug for project CubeMX ****
+18:56:39 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-size   CubeMX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  41792	    484	   2172	  44448	   ada0	CubeMX.elf
+Finished building: default.size.stdout
+ 
+18:57:13 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  144 |     itoa(t,buf,10);
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:146:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  146 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:155:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  155 |     itoa(t,buf,10);
       |     ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
       |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
 arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CubeMX.elf
  
 arm-none-eabi-size   CubeMX.elf 
 arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
    text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
+  44696	    484	   2172	  47352	   b8f8	CubeMX.elf
 Finished building: default.size.stdout
  
 Finished building: CubeMX.list
  
-21:09:58 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-21:10:29 **** Incremental Build of configuration Debug for project CubeMX ****
+18:59:39 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:129:7: warning: unused variable 'i' [-Wunused-variable]
-  129 |   int i = 1;
-      |       ^
-../Core/Src/main.c:128:8: warning: unused variable 'hpa' [-Wunused-variable]
-  128 |   char hpa[3] = "hPa";
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:156:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  156 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44768	    484	   2172	  47424	   b940	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:00:55 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44768	    484	   2172	  47424	   b940	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:02:38 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/TSL2591.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/TSL2591.d" -MT"Core/Src/TSL2591.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/TSL2591.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/DEV_Config.h:16,
+                 from ../Core/Src/TSL2591.c:12:
+../Core/Inc/Debug.h:19: warning: "DEBUG" redefined
+   19 |  #define DEBUG(__info,...) printf("Debug : " __info,##__VA_ARGS__)
+      | 
+<command-line>: note: this is the location of the previous definition
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44688	    484	   2172	  47344	   b8f0	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:03:22 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:137:17: warning: initializer-string for array of 'char' is too long
+  137 |   char lux[2] = " lx";
+      |                 ^~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44688	    484	   2172	  47344	   b8f0	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:04:00 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-size   CubeMX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44688	    484	   2172	  47344	   b8f0	CubeMX.elf
+Finished building: default.size.stdout
+ 
+19:04:47 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:06:47 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:160:10: warning: unused variable 'buf' [-Wunused-variable]
+  160 |     char buf[7] ="";
+      |          ^~~
+../Core/Src/main.c:166:10: warning: unused variable 'buf' [-Wunused-variable]
+  166 |     char buf[7] ="";
+      |          ^~~
+../Core/Src/main.c:173:10: warning: unused variable 'buf' [-Wunused-variable]
+  173 |     char buf[7] ="";
+      |          ^~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44776	    484	   2172	  47432	   b948	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:07:59 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:158:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  158 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:134:8: warning: unused variable 'buf' [-Wunused-variable]
+  134 |   char buf[7] ="";
       |        ^~~
-../Core/Src/main.c:127:8: warning: unused variable 'celsius' [-Wunused-variable]
-  127 |   char celsius[2] = " C";
-      |        ^~~~~~~
-../Core/Src/main.c:126:8: warning: unused variable 'buf' [-Wunused-variable]
-  126 |   char buf[7] ="";
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44768	    484	   2172	  47424	   b940	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:09:08 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:158:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  158 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:134:8: warning: unused variable 'buf' [-Wunused-variable]
+  134 |   char buf[7] ="";
       |        ^~~
-../Core/Src/main.c:125:16: warning: unused variable 'temp' [-Wunused-variable]
-  125 |   double pres, temp;
-      |                ^~~~
-../Core/Src/main.c:125:10: warning: unused variable 'pres' [-Wunused-variable]
-  125 |   double pres, temp;
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
       |          ^~~~
-../Core/Src/main.c:124:10: warning: unused variable 'test' [-Wunused-variable]
-  124 |   int8_t test;
-      |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
 arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CubeMX.elf
  
 arm-none-eabi-size   CubeMX.elf 
 arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
    text	   data	    bss	    dec	    hex	filename
-  39548	    484	   2092	  42124	   a48c	CubeMX.elf
+  44800	    484	   2172	  47456	   b960	CubeMX.elf
 Finished building: default.size.stdout
  
 Finished building: CubeMX.list
  
-21:10:48 **** Incremental Build of configuration Debug for project CubeMX ****
+19:10:47 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  144 |     itoa(t,buf,10);
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:9: error: assignment to expression with array type
+  157 |     buf ="";
+      |         ^
+../Core/Src/main.c:158:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  158 |     itoa(t,buf,10);
       |     ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
+../Core/Src/main.c:163:9: error: assignment to expression with array type
+  163 |     buf ="";
+      |         ^
+../Core/Src/main.c:170:9: error: assignment to expression with array type
+  170 |     buf ="";
+      |         ^
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
       |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
-arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
-Finished building target: CubeMX.elf
- 
-arm-none-eabi-size   CubeMX.elf 
-arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-Finished building: CubeMX.list
- 
-21:11:04 **** Incremental Build of configuration Debug for project CubeMX ****
-make -j8 all 
-arm-none-eabi-size   CubeMX.elf 
-   text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
-Finished building: default.size.stdout
- 
-21:12:20 **** Incremental Build of configuration Debug for project CubeMX ****
+make: *** [Core/Src/subdir.mk:61: Core/Src/main.o] Error 1
+"make -j8 all" terminated with exit code 2. Build might be incomplete.
+19:11:43 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  144 |     itoa(t,buf,10);
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
       |     ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
       |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
 arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CubeMX.elf
  
 arm-none-eabi-size   CubeMX.elf 
 arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
    text	   data	    bss	    dec	    hex	filename
-  42836	    484	   2108	  45428	   b174	CubeMX.elf
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
 Finished building: default.size.stdout
  
 Finished building: CubeMX.list
  
-21:13:06 **** Incremental Build of configuration Debug for project CubeMX ****
+19:12:22 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:144:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  144 |     itoa(t,buf,10);
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:137:17: warning: initializer-string for array of 'char' is too long
+  137 |   char lux[3] = " lx  ";
+      |                 ^~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
       |     ^~~~
-../Core/Src/main.c:124:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
-  124 |   int8_t test;
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
       |          ^~~~
-../Core/Src/main.c: In function '_write':
-../Core/Src/main.c:674:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
-  674 |  HAL_UART_Transmit(&huart2, ptr, len, 50);
-      |                             ^~~
-      |                             |
-      |                             char *
-In file included from ../Core/Inc/stm32l4xx_hal_conf.h:450,
-                 from ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:29,
-                 from ../Core/Inc/main.h:30,
-                 from ../Core/Src/main.c:20:
-../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:1674:79: note: expected 'const uint8_t *' {aka 'const unsigned char *'} but argument is of type 'char *'
- 1674 | HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, const uint8_t *pData, uint16_t Size, uint32_t Timeout);
-      |                                                                ~~~~~~~~~~~~~~~^~~~~
-At top level:
-../Core/Src/main.c:365:13: warning: 'MX_LCD_Init' defined but not used [-Wunused-function]
-  365 | static void MX_LCD_Init(void)
-      |             ^~~~~~~~~~~
 arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
 Finished building target: CubeMX.elf
  
 arm-none-eabi-size   CubeMX.elf 
 arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
    text	   data	    bss	    dec	    hex	filename
-  42844	    484	   2108	  45436	   b17c	CubeMX.elf
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
 Finished building: default.size.stdout
  
 Finished building: CubeMX.list
+ 
+19:13:08 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:137:17: warning: initializer-string for array of 'char' is too long
+  137 |   char lux[3] = "  lx";
+      |                 ^~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:14:05 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:157:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  157 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
+arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
+ 
+Finished building: CubeMX.list
+ 
+19:15:20 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-size   CubeMX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
+ 
+10:07:20 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-size   CubeMX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
+ 
+18:57:32 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-size   CubeMX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
+ 
+19:02:42 **** Incremental Build of configuration Debug for project CubeMX ****
+make -j8 all 
+arm-none-eabi-size   CubeMX.elf 
+   text	   data	    bss	    dec	    hex	filename
+  44712	    484	   2172	  47368	   b908	CubeMX.elf
+Finished building: default.size.stdout
  

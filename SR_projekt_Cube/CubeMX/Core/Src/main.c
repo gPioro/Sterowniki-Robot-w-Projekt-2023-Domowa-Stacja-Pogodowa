@@ -21,6 +21,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "i2c.h"
+#include "usart.h"
 #include "bmp280.h"
 #include "bmp280_defs.h"
 #include <stdio.h>
@@ -46,13 +48,13 @@
 /* USER CODE END PM */
 
 /* Private variables ---------------------------------------------------------*/
-I2C_HandleTypeDef hi2c1;
+//I2C_HandleTypeDef hi2c1;
 I2C_HandleTypeDef hi2c2;
 I2C_HandleTypeDef hi2c3;
 
 LCD_HandleTypeDef hlcd;
 
-UART_HandleTypeDef huart2;
+//UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
@@ -61,11 +63,11 @@ UART_HandleTypeDef huart2;
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_I2C1_Init(void);
+//static void MX_I2C1_Init(void);
 static void MX_I2C2_Init(void);
 static void MX_I2C3_Init(void);
 static void MX_LCD_Init(void);
-static void MX_USART2_UART_Init(void);
+//static void MX_USART2_UART_Init(void);
 /* USER CODE BEGIN PFP */
 
 int8_t BMP280_init(void);
@@ -79,6 +81,9 @@ void print_rslt(const char api_name[], int8_t rslt);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+JOYState_TypeDef JoyState;
+FlagStatus KeyPressed;
+
 struct bmp280_dev bmp;
 struct bmp280_uncomp_data ucomp_data;
 /* USER CODE END 0 */
@@ -114,18 +119,22 @@ int main(void)
   MX_I2C1_Init();
   MX_I2C2_Init();
   MX_I2C3_Init();
-  //MX_LCD_Init();
+  MX_LCD_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   BSP_LCD_GLASS_Init();
   BSP_LCD_GLASS_Clear();
+  //printf("TSL2591_Light_Sensor Code\r\n");
+  	DEV_ModuleInit();
 
+  	TSL2591_Init();
   BMP280_init();
   int8_t test;
   double pres, temp;
   char buf[7] ="";
-  char celsius[2] = " C";
+  char celsius[5] = " C";
   char hpa[3] = "hPa";
+  char lux[3] = " lx";
   int i = 1;
   /* USER CODE END 2 */
 
@@ -133,11 +142,15 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  BMP280_read();
 
+	  BMP280_read();
+	  printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+	  //TSL2591_SET_LuxInterrupt(50,200);
 	  test = bmp280_get_uncomp_data(&ucomp_data, &bmp);
 	  test = bmp280_get_comp_pres_double(&pres, ucomp_data.uncomp_press, &bmp);
 	  test = bmp280_get_comp_temp_double(&temp, ucomp_data.uncomp_temp, &bmp);
+	  //printf("%.2f, %.2f, %d\r\n", temp, pres, TSL2591_Read_Lux() );
+	  int n = TSL2591_Read_Lux();
 	  int p = ((int)pres)/100;
 	  int t = (int)temp;
 	  if(i<=5){
@@ -149,8 +162,14 @@ int main(void)
 		  itoa(p,buf,10);
 		  strcat(buf,hpa);
 		  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
+		  //BSP_LCD_GLASS_ScrollSentence((uint8_t*)buf, 1, SCROLL_SPEED_MEDIUM);
 		  i++;
-		  if(i==11){
+	  } else if(i>=11 && i<=15){
+		  itoa(n,buf,10);
+		  strcat(buf,lux);
+		  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
+		  i++;
+		  if(i==16){
 			  i = 1;
 		  }
 	  }
@@ -218,48 +237,6 @@ void SystemClock_Config(void)
   * @param None
   * @retval None
   */
-static void MX_I2C1_Init(void)
-{
-
-  /* USER CODE BEGIN I2C1_Init 0 */
-
-  /* USER CODE END I2C1_Init 0 */
-
-  /* USER CODE BEGIN I2C1_Init 1 */
-
-  /* USER CODE END I2C1_Init 1 */
-  hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x10909CEC;
-  hi2c1.Init.OwnAddress1 = 0;
-  hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
-  hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;
-  hi2c1.Init.OwnAddress2 = 0;
-  hi2c1.Init.OwnAddress2Masks = I2C_OA2_NOMASK;
-  hi2c1.Init.GeneralCallMode = I2C_GENERALCALL_DISABLE;
-  hi2c1.Init.NoStretchMode = I2C_NOSTRETCH_DISABLE;
-  if (HAL_I2C_Init(&hi2c1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Analogue filter
-  */
-  if (HAL_I2CEx_ConfigAnalogFilter(&hi2c1, I2C_ANALOGFILTER_ENABLE) != HAL_OK)
-  {
-    Error_Handler();
-  }
-
-  /** Configure Digital filter
-  */
-  if (HAL_I2CEx_ConfigDigitalFilter(&hi2c1, 0) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN I2C1_Init 2 */
-
-  /* USER CODE END I2C1_Init 2 */
-
-}
 
 /**
   * @brief I2C2 Initialization Function
@@ -395,40 +372,7 @@ static void MX_LCD_Init(void)
 
 }
 
-/**
-  * @brief USART2 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART2_UART_Init(void)
-{
 
-  /* USER CODE BEGIN USART2_Init 0 */
-
-  /* USER CODE END USART2_Init 0 */
-
-  /* USER CODE BEGIN USART2_Init 1 */
-
-  /* USER CODE END USART2_Init 1 */
-  huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
-  huart2.Init.WordLength = UART_WORDLENGTH_8B;
-  huart2.Init.StopBits = UART_STOPBITS_1;
-  huart2.Init.Parity = UART_PARITY_NONE;
-  huart2.Init.Mode = UART_MODE_TX_RX;
-  huart2.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart2.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart2.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart2.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart2) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART2_Init 2 */
-
-  /* USER CODE END USART2_Init 2 */
-
-}
 
 /**
   * @brief GPIO Initialization Function
@@ -582,7 +526,7 @@ int8_t BMP280_read(void) {
      rslt = bmp280_get_comp_temp_double(&temp, ucomp_data.uncomp_temp, &bmp);
 
      /* Wyswietlenie wartosci */
-     printf("Temperatura: %.2f C Cisnienie: %.2f Pa \r\n", temp, pres);
+     printf("Temperatura: %.2f C\n Cisnienie: %.2f Pa \n", temp, pres);
 
 
      return rslt;
@@ -670,9 +614,56 @@ void print_rslt(const char api_name[], int8_t rslt)
 }
 
 
-int _write(int file, char *ptr, int len) {
-	HAL_UART_Transmit(&huart2, ptr, len, 50);
-	return len;
+void Joystick_demo()
+{
+  JOYState_TypeDef previousstate = JOY_NONE;
+
+  while(previousstate != JOY_LEFT)
+  {
+    if (KeyPressed)
+    {
+      switch(JoyState)
+      {
+      case JOY_LEFT:
+        BSP_LCD_GLASS_DisplayString((uint8_t *)"  LEFT");
+        HAL_Delay(1000);
+        break;
+
+      case JOY_RIGHT:
+        BSP_LCD_GLASS_DisplayString((uint8_t *)" RIGHT");
+        break;
+
+      case JOY_UP:
+        BSP_LCD_GLASS_DisplayString((uint8_t *)"    UP");
+        break;
+
+      case JOY_DOWN:
+        BSP_LCD_GLASS_DisplayString((uint8_t *)"  DOWN");
+        break;
+
+      case JOY_SEL:
+        BSP_LCD_GLASS_DisplayString((uint8_t *)"   SEL");
+        break;
+
+      default:
+        break;
+      }
+
+      if(previousstate != JoyState)
+      {
+        BSP_LED_Off(LED4);
+        BSP_LED_Off(LED5);
+        if(JoyState == JOY_UP)
+        {
+          BSP_LED_On(LED5);
+        }
+      }
+
+      previousstate = JoyState;
+      KeyPressed = RESET;
+      HAL_Delay(200);
+    }
+  }
 }
 
 /* USER CODE END 4 */
