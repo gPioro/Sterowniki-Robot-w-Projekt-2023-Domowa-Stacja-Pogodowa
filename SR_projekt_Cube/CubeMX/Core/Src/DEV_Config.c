@@ -123,7 +123,7 @@ Info:
 ******************************************************************************/
 UBYTE DEV_ModuleInit(void)
 {
-		GPIO_Config();
+	GPIO_Config();
     DEV_I2C_Init(0x29<<1);
     return 0;
 }

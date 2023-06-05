@@ -37,13 +37,13 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   CONTENTS, READONLY, DEBUGGING, OCTETS
  16 .debug_macro  00029d92  00000000  00000000  0003c3c0  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   000167cd  00000000  00000000  00066152  2**0
+ 17 .debug_line   000167c9  00000000  00000000  00066152  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    000f62c8  00000000  00000000  0007c91f  2**0
+ 18 .debug_str    000f62c8  00000000  00000000  0007c91b  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000050  00000000  00000000  00172be7  2**0
+ 19 .comment      00000050  00000000  00000000  00172be3  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  00005ab4  00000000  00000000  00172c38  2**2
+ 20 .debug_frame  00005ab4  00000000  00000000  00172c34  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -1410,7 +1410,7 @@ UBYTE DEV_ModuleInit(void)
 {
  8000fd4:	b580      	push	{r7, lr}
  8000fd6:	af00      	add	r7, sp, #0
-		GPIO_Config();
+	GPIO_Config();
  8000fd8:	f7ff ff73 	bl	8000ec2 <GPIO_Config>
     DEV_I2C_Init(0x29<<1);
  8000fdc:	2052      	movs	r0, #82	; 0x52
@@ -1748,7 +1748,7 @@ UBYTE TSL2591_Init(void)
 {
  8001194:	b580      	push	{r7, lr}
  8001196:	af00      	add	r7, sp, #0
-		DEV_I2C_Init(TSL2591_ADDRESS<<1);//8-bit address
+	DEV_I2C_Init(TSL2591_ADDRESS<<1);//8-bit address
  8001198:	2052      	movs	r0, #82	; 0x52
  800119a:	f7ff fe99 	bl	8000ed0 <DEV_I2C_Init>
     //printf("ID = 0x%X \r\n",TSL2591_Read_Byte(ID_REGISTER));
@@ -4071,10 +4071,10 @@ int main(void)
   BSP_LCD_GLASS_Clear();
  800211a:	f000 fcdb 	bl	8002ad4 <BSP_LCD_GLASS_Clear>
   //printf("TSL2591_Light_Sensor Code\r\n");
-  	DEV_ModuleInit();
+  DEV_ModuleInit();
  800211e:	f7fe ff59 	bl	8000fd4 <DEV_ModuleInit>
 
-  	TSL2591_Init();
+  TSL2591_Init();
  8002122:	f7ff f837 	bl	8001194 <TSL2591_Init>
   BMP280_init();
  8002126:	f000 fb15 	bl	8002754 <BMP280_init>
@@ -4116,11 +4116,11 @@ int main(void)
   int flag = 0;
  8002168:	2300      	movs	r3, #0
  800216a:	63bb      	str	r3, [r7, #56]	; 0x38
+
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
 	  BMP280_read();
  800216c:	f000 fb54 	bl	8002818 <BMP280_read>
 	  printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());

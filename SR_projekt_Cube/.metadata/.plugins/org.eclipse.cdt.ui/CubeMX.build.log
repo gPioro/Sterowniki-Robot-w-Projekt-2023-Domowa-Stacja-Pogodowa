@@ -1,18 +1,32 @@
-13:52:21 **** Incremental Build of configuration Debug for project CubeMX ****
+17:06:22 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/DEV_Config.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/DEV_Config.d" -MT"Core/Src/DEV_Config.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/DEV_Config.o"
+arm-none-eabi-gcc "../Core/Src/TSL2591.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/TSL2591.d" -MT"Core/Src/TSL2591.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/TSL2591.o"
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+In file included from ../Core/Inc/DEV_Config.h:16,
+                 from ../Core/Src/TSL2591.c:12:
+../Core/Inc/Debug.h:19: warning: "DEBUG" redefined
+   19 |  #define DEBUG(__info,...) printf("Debug : " __info,##__VA_ARGS__)
+      | 
+<command-line>: note: this is the location of the previous definition
+In file included from ../Core/Inc/DEV_Config.h:16,
+                 from ../Core/Src/DEV_Config.c:12:
+../Core/Inc/Debug.h:19: warning: "DEBUG" redefined
+   19 |  #define DEBUG(__info,...) printf("Debug : " __info,##__VA_ARGS__)
+      | 
+<command-line>: note: this is the location of the previous definition
 ../Core/Src/main.c: In function 'main':
-../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
-  128 |    DEV_ModuleInit();
-      |    ^~~~~~~~~~~~~~
-../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
-  130 |    TSL2591_Init();
-      |    ^~~~~~~~~~~~
-../Core/Src/main.c:148:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
-  148 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+../Core/Src/main.c:128:3: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |   DEV_ModuleInit();
+      |   ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:3: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |   TSL2591_Init();
+      |   ^~~~~~~~~~~~
+../Core/Src/main.c:147:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  147 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
       |                                            ^~~~~~~~~~~~~~~~
-../Core/Src/main.c:170:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
-  170 |     itoa(t,buf,10);
+../Core/Src/main.c:169:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  169 |     itoa(t,buf,10);
       |     ^~~~
 ../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
   132 |   int8_t test;
@@ -29,5 +43,5 @@ Finished building: default.size.stdout
 Finished building: CubeMX.list
  
 
-13:52:22 Build Finished. 0 errors, 5 warnings. (took 1s.218ms)
+17:06:27 Build Finished. 0 errors, 7 warnings. (took 5s.41ms)
 

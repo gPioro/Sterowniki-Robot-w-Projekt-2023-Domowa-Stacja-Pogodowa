@@ -173,8 +173,7 @@ Info:
 ******************************************************************************/
 UBYTE TSL2591_Init(void)
 {
-		DEV_I2C_Init(TSL2591_ADDRESS<<1);//8-bit address
-    //printf("ID = 0x%X \r\n",TSL2591_Read_Byte(ID_REGISTER));
+	DEV_I2C_Init(TSL2591_ADDRESS<<1);//8-bit address
     TSL2591_Enable();
     TSL2591_Set_Gain(MEDIUM_AGAIN);//25X GAIN
     TSL2591_Set_IntegralTime(ATIME_200MS);//200ms Integration time
@@ -242,10 +241,6 @@ UWORD TSL2591_Read_Lux(void)
 
     Cpl = (atime * again) / LUX_DF;
     lux1 = (int)((channel_0 - (2 * channel_1)) / Cpl);
-    // lux2 = ((0.6 * channel_0) - (channel_1)) / Cpl;
-    // This is a two segment lux equation where the first
-    // segment (Lux1) covers fluorescent and incandescent light
-    // and the second segment (Lux2) covers dimmed incandescent light
 
     if(lux1>lux2){
         return lux1;

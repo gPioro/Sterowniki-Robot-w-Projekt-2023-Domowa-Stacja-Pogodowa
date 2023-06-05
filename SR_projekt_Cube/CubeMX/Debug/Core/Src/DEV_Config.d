@@ -3,7 +3,7 @@ Core/Src/DEV_Config.o: ../Core/Src/DEV_Config.c ../Core/Inc/DEV_Config.h \
  ../Core/Inc/stm32l4xx_hal_conf.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h \
- ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h \
+ ../Core/Inc/stm32l4xx.h \
  ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h \
  ../Drivers/CMSIS/Include/core_cm4.h \
  ../Drivers/CMSIS/Include/cmsis_version.h \
@@ -35,7 +35,7 @@ Core/Src/DEV_Config.o: ../Core/Src/DEV_Config.c ../Core/Inc/DEV_Config.h \
 ../Core/Inc/stm32l4xx_hal_conf.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h:
-../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l4xx.h:
+../Core/Inc/stm32l4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l476xx.h:
 ../Drivers/CMSIS/Include/core_cm4.h:
 ../Drivers/CMSIS/Include/cmsis_version.h:

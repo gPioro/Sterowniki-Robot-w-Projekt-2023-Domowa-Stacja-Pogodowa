@@ -124,9 +124,7 @@ int main(void)
   /* USER CODE BEGIN 2 */
   BSP_LCD_GLASS_Init();
   BSP_LCD_GLASS_Clear();
-  //printf("TSL2591_Light_Sensor Code\r\n");
   DEV_ModuleInit();
-
   TSL2591_Init();
   BMP280_init();
   int8_t test;
@@ -145,11 +143,10 @@ int main(void)
   {
 	  BMP280_read();
 	  printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
-	  //TSL2591_SET_LuxInterrupt(50,200);
 	  test = bmp280_get_uncomp_data(&ucomp_data, &bmp);
 	  test = bmp280_get_comp_pres_double(&pres, ucomp_data.uncomp_press, &bmp);
 	  test = bmp280_get_comp_temp_double(&temp, ucomp_data.uncomp_temp, &bmp);
-	  //printf("%.2f, %.2f, %d\r\n", temp, pres, TSL2591_Read_Lux() );
+	  printf("%.2f, %.2f, %d\r\n", temp, pres, TSL2591_Read_Lux() );
 	  int n = TSL2591_Read_Lux();
 	  int p = ((int)pres)/100;
 	  int t = (int)temp;
