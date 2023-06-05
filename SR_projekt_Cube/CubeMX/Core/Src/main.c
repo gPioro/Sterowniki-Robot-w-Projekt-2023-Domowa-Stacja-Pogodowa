@@ -188,7 +188,6 @@ int main(void)
 			  itoa(p,buf,10);
 			  strcat(buf,hpa);
 			  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
-			  //BSP_LCD_GLASS_ScrollSentence((uint8_t*)buf, 1, SCROLL_SPEED_MEDIUM);
 			  i++;
 		  } else if(i>=11 && i<=15){
 			  BSP_LCD_GLASS_Clear();
@@ -202,7 +201,6 @@ int main(void)
 		  }
 	  }
 	  HAL_Delay(100);
-	  //BSP_LCD_GLASS_Clear();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
