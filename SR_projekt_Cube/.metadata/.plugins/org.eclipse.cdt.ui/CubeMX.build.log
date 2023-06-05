@@ -1,10 +1,33 @@
-19:02:42 **** Incremental Build of configuration Debug for project CubeMX ****
+13:52:21 **** Incremental Build of configuration Debug for project CubeMX ****
 make -j8 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32L476xx -c -I../Core/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc -I../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32L4xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'main':
+../Core/Src/main.c:128:4: warning: implicit declaration of function 'DEV_ModuleInit' [-Wimplicit-function-declaration]
+  128 |    DEV_ModuleInit();
+      |    ^~~~~~~~~~~~~~
+../Core/Src/main.c:130:4: warning: implicit declaration of function 'TSL2591_Init' [-Wimplicit-function-declaration]
+  130 |    TSL2591_Init();
+      |    ^~~~~~~~~~~~
+../Core/Src/main.c:148:44: warning: implicit declaration of function 'TSL2591_Read_Lux' [-Wimplicit-function-declaration]
+  148 |    printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
+      |                                            ^~~~~~~~~~~~~~~~
+../Core/Src/main.c:170:5: warning: implicit declaration of function 'itoa' [-Wimplicit-function-declaration]
+  170 |     itoa(t,buf,10);
+      |     ^~~~
+../Core/Src/main.c:132:10: warning: variable 'test' set but not used [-Wunused-but-set-variable]
+  132 |   int8_t test;
+      |          ^~~~
+arm-none-eabi-gcc -o "CubeMX.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\gpior\Documents\Studia\Semestr_VI\SR\SR_projekt_Cube\CubeMX\STM32L476VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="CubeMX.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: CubeMX.elf
+ 
 arm-none-eabi-size   CubeMX.elf 
+arm-none-eabi-objdump -h -S  CubeMX.elf  > "CubeMX.list"
    text	   data	    bss	    dec	    hex	filename
-  44712	    484	   2172	  47368	   b908	CubeMX.elf
+  45072	    504	   2176	  47752	   ba88	CubeMX.elf
 Finished building: default.size.stdout
  
+Finished building: CubeMX.list
+ 
 
-19:02:42 Build Finished. 0 errors, 0 warnings. (took 439ms)
+13:52:22 Build Finished. 0 errors, 5 warnings. (took 1s.218ms)
 

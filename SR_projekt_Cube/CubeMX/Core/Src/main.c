@@ -125,24 +125,24 @@ int main(void)
   BSP_LCD_GLASS_Init();
   BSP_LCD_GLASS_Clear();
   //printf("TSL2591_Light_Sensor Code\r\n");
-  	DEV_ModuleInit();
+  DEV_ModuleInit();
 
-  	TSL2591_Init();
+  TSL2591_Init();
   BMP280_init();
   int8_t test;
   double pres, temp;
   char buf[7] ="";
-  char celsius[5] = " C";
+  char celsius[2] = " C";
   char hpa[3] = "hPa";
   char lux[3] = " lx";
   int i = 1;
+  int flag = 0;
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-
 	  BMP280_read();
 	  printf("Natezenie swiatla = %d lx \r\n",TSL2591_Read_Lux());
 	  //TSL2591_SET_LuxInterrupt(50,200);
@@ -153,28 +153,59 @@ int main(void)
 	  int n = TSL2591_Read_Lux();
 	  int p = ((int)pres)/100;
 	  int t = (int)temp;
-	  if(i<=5){
+
+	  if (BSP_JOY_GetState() == JOY_LEFT){
+		  flag = 1;
+	  } else if (BSP_JOY_GetState() == JOY_RIGHT) {
+		  flag = 2;
+	  } else if (BSP_JOY_GetState() == JOY_UP) {
+		  flag = 3;
+	  } else if (BSP_JOY_GetState() == JOY_SEL) {
+		  flag = 5;
+	  }
+
+	  if (flag == 1){
+		  BSP_LCD_GLASS_Clear();
 		  itoa(t,buf,10);
 		  strcat(buf,celsius);
 		  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
-		  i++;
-	  } else if(i>=6 && i<=10){
+	  }	else if(flag == 2){
+		  BSP_LCD_GLASS_Clear();
 		  itoa(p,buf,10);
 		  strcat(buf,hpa);
 		  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
-		  //BSP_LCD_GLASS_ScrollSentence((uint8_t*)buf, 1, SCROLL_SPEED_MEDIUM);
-		  i++;
-	  } else if(i>=11 && i<=15){
+	  }	else if(flag == 3){
+		  BSP_LCD_GLASS_Clear();
 		  itoa(n,buf,10);
 		  strcat(buf,lux);
 		  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
-		  i++;
-		  if(i==16){
-			  i = 1;
+	  } else if(flag == 5){
+		  if(i<=5){
+			  BSP_LCD_GLASS_Clear();
+			  itoa(t,buf,10);
+			  strcat(buf,celsius);
+			  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
+			  i++;
+		  } else if(i>=6 && i<=10){
+			  BSP_LCD_GLASS_Clear();
+			  itoa(p,buf,10);
+			  strcat(buf,hpa);
+			  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
+			  //BSP_LCD_GLASS_ScrollSentence((uint8_t*)buf, 1, SCROLL_SPEED_MEDIUM);
+			  i++;
+		  } else if(i>=11 && i<=15){
+			  BSP_LCD_GLASS_Clear();
+			  itoa(n,buf,10);
+			  strcat(buf,lux);
+			  BSP_LCD_GLASS_DisplayString((uint8_t*)buf);
+			  i++;
+			  if(i==16){
+				  i = 1;
+			  }
 		  }
 	  }
-	  HAL_Delay(1000);
-	  BSP_LCD_GLASS_Clear();
+	  HAL_Delay(100);
+	  //BSP_LCD_GLASS_Clear();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
